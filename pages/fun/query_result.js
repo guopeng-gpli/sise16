@@ -23,14 +23,12 @@ Page({
         console.log('return_info')
         console.log(res.data)
         var count = res.data.count;
-        //console.log(name)
-        // var location = res.data.location
-        //  console.log(location)
+        var array=res.data.Array
+        console.log(array)
         that.setData({
           result: res.data,
-          // name: res.data.name,
-          // location: res.data.location
-          count: res.data.count
+          count: res.data.count,
+          array: res.data.Array,//应该用循环的方式访问名字，类似于cet.js中
         })
         if (res.statusCode != 200) {
           setTimeout(function () {
@@ -41,10 +39,13 @@ Page({
             })
           }, 1500)
         }
-
-
       },
     })
+  },
+  back:function(){
+wx.navigateBack({
+  delta:2
+})
   },
 
   /**

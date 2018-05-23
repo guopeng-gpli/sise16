@@ -1,2 +1,30 @@
-<!--pages/fun/query_result.wxml-->
-<text>pages/fun/query_result.wxml</text>
+<!--cet_result.wxml-->
+
+
+<view >
+    <view class="title">
+        今日报寝情况
+    </view>
+<view class="item">
+            <label class="flex-view-item">  未报寝人数</label>
+            <text class="flex-view-item">{{851-count}}</text>
+        </view>
+    <scroll-view wx:for="{{array}}" wx:for-item="a" class="container">
+        <view class="item">
+            <label class="flex-view-item">班级</label>
+            <text class="flex-view-item">{{a.class}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">姓名</label>
+            <text class="flex-view-item" style="font-weight:bold">{{a.name}}</text>
+        </view>
+
+    </scroll-view>
+
+        <view class="item">
+            <label class="flex-view-item">  已报寝人数</label>
+            <text class="flex-view-item">{{count}}</text>
+        </view>
+</view>
+<button class="back" bindtap="back">返回</button>

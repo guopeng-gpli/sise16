@@ -72,7 +72,7 @@ Page({
         that.setData({
           result: res.data,
           name: res.data.name,
-          location: res.data.location
+          role: res.data.role
         })
         if (res.statusCode != 200) {
           setTimeout(function () {
@@ -83,7 +83,17 @@ Page({
             })
           }, 1500)
         }
-
+      //   else if (res.data.role=='辅导员')
+      //   {
+      //     wx.navigateTo({
+      //       url: 'fdy',
+      //     })
+      //   }
+      // else{
+      //   wx.navigateTo({
+      //     url: 'quanxiancuowu',
+      //   })
+      // }
 
       },
     })

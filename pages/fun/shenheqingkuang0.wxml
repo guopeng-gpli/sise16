@@ -1,9 +1,14 @@
+<!--pages/fun/shenheqingkuang0.wxml-->
+<!--未通过审核  -->
+<!--pages/fun/shenheqingkuang.wxml-->
+<!--通过审核 -->
 <!--test.wxml-->
 <!-- <text>test.wxml</text> -->
 <view class="container">
     <icon type='warn' size='50'></icon>
     <view class="title flex-view-item">
-      您的角色非辅导员，无权限查看
+      暂 未 通 过 审 核
     </view>
+    
 </view>
 <button class="back" bindtap="back">返 回</button>

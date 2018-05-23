@@ -25,9 +25,9 @@ Page({
                 result: res.data,
                 openid:res.data.openid
               })
-              wx.setStorageSync('openid', res.data.openid)
-              console.log('同步保存成功')
-              var openid = wx.getStorageSync('openid')
+              wx.setStorageSync('openid', res.data.openid)//存入缓存
+              console.log('openid同步保存成功')
+              var openid = wx.getStorageSync('openid')//从缓存取
               console.log('123456' + openid)
               if (res.statusCode != 200) {
                 setTimeout(function () {

@@ -1,2 +1,42 @@
-<!--pages/fun/shenhe.wxml-->
-<text>pages/fun/shenhe.wxml</text>
+
+<view >
+    
+<view class="title">
+    
+    </view>
+
+<view class="title">
+      请假情况
+    </view>
+
+
+
+    <scroll-view wx:for="{{array}}" wx:for-item="a" class="container">
+        <view class="item">
+            <label class="flex-view-item">学号</label>
+            <text class="flex-view-item">{{a.num}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">姓名</label>
+            <text class="flex-view-item">{{a.name}}</text>
+        </view>
+         <view class="item">
+            <label class="flex-view-item">班级</label>
+            <text class="flex-view-item" >{{a.class}}</text>
+        </view>
+         <view class="item">
+            <label class="flex-view-item">联系方式</label>
+            <text class="flex-view-item" >{{a.tel}}</text>
+        </view>
+        <view class="item">
+            <label class="flex-view-item">请假原因</label>
+            <text class="flex-view-item" >{{a.reason}}</text>
+        </view>
+
+    </scroll-view>
+
+ 
+</view>
+<button class="back" bindtap="tongguo">一键通过</button>
+<button class="back" bindtap="butongguo">不予通过</button>

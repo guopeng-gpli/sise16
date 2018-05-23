@@ -8,7 +8,33 @@
 <view class="item">
             <label class="flex-view-item">  未报寝人数</label>
             <text class="flex-view-item">{{851-count}}</text>
+</view>
+<view class="item">
+            <label class="flex-view-item">  请假人数</label>
+            <text class="flex-view-item">{{count1}}</text>
+</view>
+<view class="title">
+      请假情况
+    </view>
+ <scroll-view wx:for="{{array1}}" wx:for-item="b" class="container">
+        <view class="item">
+            <label class="flex-view-item">班级</label>
+            <text class="flex-view-item">{{b.class}}</text>
         </view>
+
+        <view class="item">
+            <label class="flex-view-item">姓名</label>
+            <text class="flex-view-item" style="font-weight:bold">{{b.name}}</text>
+        </view>
+
+    </scroll-view>
+
+
+<view class="title">
+      未报寝情况
+    </view>
+
+
     <scroll-view wx:for="{{array}}" wx:for-item="a" class="container">
         <view class="item">
             <label class="flex-view-item">班级</label>

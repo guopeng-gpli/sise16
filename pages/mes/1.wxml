@@ -1,0 +1,7 @@
+<!--pages/mes/1.wxml-->
+<view class='title'>
+     学生会议
+    </view>
+
+<view class='content'>5月24日 D104 全体学生会议
+</view>

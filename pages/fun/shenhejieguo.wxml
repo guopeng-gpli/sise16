@@ -1,9 +1,10 @@
 <!--test.wxml-->
 <!-- <text>test.wxml</text> -->
 <view class="container">
-    <icon type='warn' size='50'></icon>
+    <icon type='success_no_circle' size='50'></icon>
     <view class="title flex-view-item">
-      您的角色非辅导员，无权限查看
+      处 理 成 功
     </view>
+    
 </view>
 <button class="back" bindtap="back">返 回</button>

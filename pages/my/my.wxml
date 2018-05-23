@@ -3,19 +3,30 @@
 
 <view >
    
-<text>您的微信号已绑定学号</text>
     <scroll-view class="container">
         <view class="item">
-            <label class="flex-view-item">已绑定学号</label>
+            <label class="flex-view-item">学号</label>
             <text class="flex-view-item">{{num}}</text>
         </view>
 
         <view class="item">
-            <label class="flex-view-item">已绑定学生</label>
+            <label class="flex-view-item">姓名</label>
             <text class="flex-view-item" style="font-weight:bold">{{name}}</text>
         </view>
-     
+
+        <view class="item">
+            <label class="flex-view-item">角色</label>
+            <text class="flex-view-item">{{role}}</text>
+        </view>
+        <view class="item">
+            <label class="flex-view-item">所在楼栋</label>
+            <text class="flex-view-item">{{location}}</text>
+        </view>
+         <view class="item">
+            <label class="flex-view-item">绑定状态</label>
+            <text class="flex-view-item">{{binding}}</text>
+        </view>
+           
     </scroll-view>
     
 </view>
-<button class="sure" bindtap="back">返回主页面</button>

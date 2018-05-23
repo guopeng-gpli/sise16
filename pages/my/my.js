@@ -1,4 +1,5 @@
 // pages/test3/insert_result.js
+
 Page({
 
   /**
@@ -6,47 +7,67 @@ Page({
    */
   data: {
     openid: 0,
-    result: NaN
+    result: NaN,
+    flag: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var page = getCurrentPages();
-    var prePage = page[page.length - 2]
-    console.log('2')
-    console.log(prePage.data.openid)
-    //对insert页面的result进行一次拷贝 
-    this.setData({
-      name: prePage.data.result.name,
-      num: prePage.data.result.num,
-      openid: prePage.data.result.openid,
-      binding: prePage.data.result.binding,//read_name.php需要返回flag
-      role: prePage.data.result.role,
-      location: prePage.data.result.location,
-      //  session_key: prePage.data.result.session_key,
-    })
-    console.log(prePage.data.result.num)
-    console.log(prePage.data.result.binding)
+  
+    
+    var openid = wx.getStorageSync('openid')//从缓存取
+    console.log('openid ' + openid) 
+      var that = this
+      wx.request({
+        url: 'http://guopengli.cn/read_name1.php',
+        data: {
+          openid: openid,
+        },
 
-  },
-  back: function () {
-    //console.log("back_to_test3")//返回的监听函数
-    //wx.hideLoading()
-    wx.navigateBack({
-      delta: 3
-    })
+        success: function (res) {
+          console.log(res.statusCode)
+          console.log('1')
+          console.log(res.data)
+          var num=res.data.num
+          var name = res.data.name
+          var role=res.data.role
+          var location=res.data.location
+          var binding=res.data.binding
+          that.setData({
+            result: res.data,
+            flag: res.data.flag,
+            num: res.data.num,
+            name :res.data.name,
+            role:res.data.role,
+            location: res.data.location,
+            binding:res.data.binding
+          })
+          if (res.statusCode != 200) {
+            setTimeout(function () {
+              wx.showToast({
+                title: '服务器异常',
+                icon: 'none',
+                duration: 2000
+              })
+            }, 1500)
+          }
+        },
+        fail: function () {//主要用于调试
+          setTimeout(function () {
+            wx.showToast({
+              title: 'request接口调用失败',
+              icon: 'none',
+              duration: 2000
+            })
+          }, 1500)
+          console.log("fail")
+        }
+      })
+    
   },
 
 
 
 })
-
-
-
-
-
-
-
-

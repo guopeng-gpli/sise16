@@ -27,7 +27,7 @@
             <label class="flex-view-item">绑定状态</label>
             <text class="flex-view-item">{{binding}}</text>
         </view>
-          
+           
     </scroll-view>
     
 </view>

@@ -10,9 +10,10 @@
     "pages/fun/leave_result",
     "pages/fun/shenhe",
    "pages/fun/audit",
-
-  "pages/fun/quanxiancuowu",
+   "pages/fun/shenhejieguo",
    "pages/fun/foward",
+   "pages/fun/shenheqingkuang",
+   "pages/fun/shenheqingkuang0",
     "pages/my/my",
     "pages/my/sign",
     "pages/my/sign_result",
@@ -22,7 +23,11 @@
    "pages/index/report_result",
    "pages/index/report_result0",
    "pages/fun/query_result",
-    "pages/my/advise"   
+   "pages/fun/quanxiancuowu",
+    "pages/my/advise", 
+    "pages/mes/0"  ,
+    "pages/mes/1",
+    "pages/mes/2"
   ],
   "tabBar": {
     "selectedColor": "#00BFFF",

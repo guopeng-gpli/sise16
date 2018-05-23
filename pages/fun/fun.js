@@ -21,9 +21,9 @@ Page({
     var that = this
     that.setData({
       msgList: [
-        { url: "url", title: "公告：多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
-        { url: "url", title: "公告：悦如公寓三周年生日趴邀你免费吃喝欢唱" },
-        { url: "http://www.baidu.com", title: "公告：你想和一群有志青年一起过生日嘛？" }]
+        { url: "../mes/0", title: "比赛：网络开发应用大赛" },
+        { url: "../mes/1", title: "通知：学生会议" },
+        { url: "../mes/2", title: "公告：信息学院2018年5月发展党员公告" }]
         
         })
    
@@ -109,19 +109,67 @@ Page({
                 url: 'shenhe',
               })
             }
-            else
+            else if (res.data.role != '辅导员'&&res.data.dayoff=='0'){
               wx.navigateTo({
                 url: 'leave'
               })
+            }
+            else{
+              if(res.data.agree=='1'){
+                wx.navigateTo({
+                  url: 'shenheqingkuang',
+                })
+            }
+            else{
+              wx.navigateTo({
+                url: 'shenheqingkuang0',
+              })
+            }
+              
+            }
+             
         }
+
       })
         
         break
       case "1":
-     
-        wx.navigateTo({
-          url: 'audit'
+        var openid = wx.getStorageSync('openid')
+        console.log('123456  ' + openid)
+        var that = this
+        wx.request({
+          url: 'http://guopengli.cn/judge_role.php',
+          data:
+          {
+            openid: openid,
+          },
+          success: function (res) {
+            console.log(res.statusCode)
+            console.log(res.data)
+            that.setData({
+              result: res.data
+            })
+            if (res.statusCode != 200) {
+              setTimeout(function () {
+                wx.showToast({
+                  title: '服务器异常',
+                  icon: 'none',
+                  duration: 2000
+                })
+              }, 1500)
+            }
+            else if (res.data.role == '辅导员') {
+              wx.navigateTo({
+                url: 'query_result',
+              })
+            }
+            else
+              wx.navigateTo({
+                url: 'quanxiancuowu'
+              })
+          }
         })
+
         break
       case "2":
         wx.navigateTo({
@@ -130,7 +178,7 @@ Page({
         break
       case "3":
         wx.navigateTo({
-          url: 'foward',
+          //url: 'foward',
         })
         break
     }

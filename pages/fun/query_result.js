@@ -23,12 +23,16 @@ Page({
         console.log('return_info')
         console.log(res.data)
         var count = res.data.count;
+        var count1=res.data.count1;
         var array=res.data.Array
+        var array1=res.data.Array1
         console.log(array)
         that.setData({
           result: res.data,
           count: res.data.count,
-          array: res.data.Array,//应该用循环的方式访问名字，类似于cet.js中
+          count1:res.data.count1,
+          array: res.data.Array,
+          array1: res.data.Array1,//应该用循环的方式访问名字，类似于cet.js中
         })
         if (res.statusCode != 200) {
           setTimeout(function () {

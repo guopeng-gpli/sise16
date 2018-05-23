@@ -1,0 +1,34 @@
+<map id="map" longitude="112.9351600000" latitude="28.1578300000" scale="18" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+
+
+
+<!--sign_result.wxml-->
+
+
+<view >
+   
+
+    <scroll-view class="container">
+        <view class="item">
+            <label class="flex-view-item">所在纬度</label>
+            <text class="flex-view-item">{{latitude}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">所在经度</label>
+            <text class="flex-view-item">{{longitude}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">姓名</label>
+            <text class="flex-view-item">{{name}}</text>
+        </view>
+        <view class="item">
+            <label class="flex-view-item">应属楼栋</label>
+            <text class="flex-view-item">{{location}}</text>
+        </view>
+          
+    </scroll-view>
+    
+</view>
+<button class="sure" bindtap="sure">确定信息并报寝</button>

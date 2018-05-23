@@ -1,0 +1,16 @@
+<!--test.wxml-->
+<!-- <text>test.wxml</text> -->
+<view class="container">
+    <icon type='success_no_circle' size='50'></icon>
+    <view class="title flex-view-item">
+      学 号 绑 定
+    </view>
+    <form class="flex-view-item" bindsubmit="infoSubmit">
+        <view class="item">
+            <label class="flex-view-item">学号</label>
+            <input name="num" placeholder="请输入您的10位学号" class="input flex-view-item" type="text">
+            </input>
+        </view>
+        <button id="submit" form-type="submit">查 询</button>
+    </form>
+</view>

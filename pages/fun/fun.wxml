@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view>
+  <swiper class='swiper' indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src='{{item}}' class='silde-image' style='width:90%;height:200px;'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='nav'>
+  <block wx:for="{{navs}}">
+    <view class='item' bindtap='navBtn' id='{{index}}'>
+      <view>
+        <image src='{{item.img}}' style='width:50px;height:50px;'></image>
+      </view>
+      <view>
+        {{item.name}}
+      </view>
+    </view>
+  </block>
+</view>
+<view class='hr'></view>

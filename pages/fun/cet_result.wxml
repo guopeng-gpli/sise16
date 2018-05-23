@@ -1,0 +1,28 @@
+<!--cet_result.wxml-->
+
+<view class="title0" wx:if="{{times==0}}">
+    抱歉，未查询到相关记录
+</view>
+<view wx:else>
+    <view class="title">
+        共查询到{{times}}次成绩记录
+    </view>
+
+    <scroll-view wx:for="{{array}}" wx:for-item="a" class="container">
+        <view class="item">
+            <label class="flex-view-item">等级</label>
+            <text class="flex-view-item">{{a.level}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">分数</label>
+            <text class="flex-view-item" style="font-weight:bold">{{a.score}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">准考证号</label>
+            <text class="flex-view-item">{{a.num}}</text>
+        </view>
+    </scroll-view>
+</view>
+<button class="back" bindtap="back">返回</button>

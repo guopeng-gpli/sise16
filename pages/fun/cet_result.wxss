@@ -1,0 +1,48 @@
+/* cet_result.wxss */
+
+page {
+    background-color: #f6f6f6;
+}
+.title{
+    margin: 50rpx 0 0 60rpx;
+}
+.title0{
+    margin: 180rpx 0 100rpx 0;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding:25rpx 55rpx;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    padding: 15rpx;
+    box-sizing: border-box;
+    border: 2rpx solid #f6f6f6;
+}
+
+label {
+    width: 200rpx;
+    padding: 0 15rpx;
+    text-align: center;
+}
+
+text {
+    padding-left: 15rpx;
+    width: 400rpx;
+}
+
+.back {
+    margin-top: 40rpx;
+    margin-bottom: 70rpx;
+    background-color: #10AEFF;
+    width: 270rpx;
+    height: 75rpx;
+    line-height: 75rpx;
+    color: white;
+    border: none;
+}

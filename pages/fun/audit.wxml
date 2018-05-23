@@ -1,0 +1,25 @@
+<!--sign_result.wxml-->
+
+
+<view >
+   
+
+    <scroll-view class="container">
+
+
+        <view class="item">
+            <label class="flex-view-item">姓名</label>
+            <text class="flex-view-item" style="font-weight:bold">{{name}}</text>
+        </view>
+
+        <view class="item">
+            <label class="flex-view-item">角色</label>
+            <text class="flex-view-item">{{role}}</text>
+        </view>
+
+
+          
+    </scroll-view>
+    
+</view>
+<button class="sure" bindtap="query">查询</button>

@@ -1,0 +1,19 @@
+<!--test.wxml-->
+<!-- <text>test.wxml</text> -->
+<view class="container">
+    <icon type='waiting' size='50'></icon>
+    <view class="title flex-view-item">
+        四六级成绩查询
+    </view>
+    <form class="flex-view-item" bindsubmit="infoSubmit">
+        <view class="item">
+            <label class="flex-view-item">学号</label>
+            <input name="xh" placeholder="请输入你的10位学号" class="input flex-view-item" type="number"></input>
+        </view>
+        <view class="item">
+            <label class="flex-view-item">姓名</label>
+            <input name="name" placeholder="请输入姓名" class="input flex-view-item"></input>
+        </view>
+        <button id="submit" form-type="submit">查 询</button>
+    </form>
+</view>

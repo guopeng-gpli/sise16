@@ -1,0 +1,16 @@
+<view class="container">
+    <text class="park_name" style="color:#6595e9;font-size:x-large">智慧报寝</text>
+</view>
+<view class="userinfo">
+  <image style="height:50px" mode="aspectFit" src=""></image>
+  <button bindtap="report">我要报寝</button>
+  <image style="height:50px" mode="aspectFit" src=""></image>
+  <button bindtap="my">我要绑定</button>
+  
+</view>
+<view>
+ 
+</view>
+<view>
+ 
+</view>

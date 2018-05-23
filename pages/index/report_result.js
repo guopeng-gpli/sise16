@@ -25,45 +25,45 @@ Page({
       //  session_key: prePage.data.result.session_key,
     })
     console.log('aaa'+prePage.data.latitude)
-    console.log("connect")
-    var that = this
-    wx.request({
-      url: 'http://guopengli.cn/report_home.php',
-      data: {
-        latitude: prePage.data.latitude,
-        longitude: prePage.data.longitude,
-        openid: prePage.data.openid
-      },
+  //  console.log("connect")
+    // var that = this
+    // wx.request({
+    //   url: 'http://guopengli.cn/report_home.php',
+    //   data: {
+    //     latitude: prePage.data.latitude,
+    //     longitude: prePage.data.longitude,
+    //     openid: prePage.data.openid
+    //   },
 
-      success: function (res) {
-        console.log(res.statusCode)
-        console.log('1')
-        console.log(res.data)
-        that.setData({
-          result: res.data
-        })
-        if (res.statusCode != 200) {
-          setTimeout(function () {
-            wx.showToast({
-              title: '服务器异常',
-              icon: 'none',
-              duration: 2000
-            })
-          }, 1500)
-        }
+    //   success: function (res) {
+    //     console.log(res.statusCode)
+    //     console.log('1')
+    //     console.log(res.data)
+    //     that.setData({
+    //       result: res.data
+    //     })
+    //     if (res.statusCode != 200) {
+    //       setTimeout(function () {
+    //         wx.showToast({
+    //           title: '服务器异常',
+    //           icon: 'none',
+    //           duration: 2000
+    //         })
+    //       }, 1500)
+    //     }
 
-      },
-      fail: function () {//主要用于调试
-        setTimeout(function () {
-          wx.showToast({
-            title: 'request接口调用失败',
-            icon: 'none',
-            duration: 2000
-          })
-        }, 1500)
-        console.log("fail")
-      }
-    })
+    //   },
+    //   fail: function () {//主要用于调试
+    //     setTimeout(function () {
+    //       wx.showToast({
+    //         title: 'request接口调用失败',
+    //         icon: 'none',
+    //         duration: 2000
+    //       })
+    //     }, 1500)
+    //     console.log("fail")
+    //   }
+    // })
   },
 
 

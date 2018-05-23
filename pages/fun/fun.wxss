@@ -49,3 +49,22 @@
   opacity: 0.2;
   margin-top: 10px;
 }
+
+
+.swiper_container {
+  margin-top: 100rpx;
+    height: 240rpx;
+   width: 80vw;
+   margin-left: 60rpx;
+  }
+  
+  .swiper_item {
+   font-size: 35rpx;
+    overflow: hidden;
+    color: #6699ff;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  text-align: center;
+
+ }

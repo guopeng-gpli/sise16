@@ -25,42 +25,44 @@ Page({
       session_key: prePage.data.result.session_key,
       
     })
-    console.log(prePage.data.result.openid)
-    var that=this
-   wx.request({
-     url: 'http://guopengli.cn/read_openid_state.php',//向这个文件请求判断openid是否存在
-     data:{
-       openid: prePage.data.result.openid
-     },
-     success: function (res) {
-       console.log(res.statusCode)
-       console.log('cc')
-       console.log(res.data)
-       that.setData({
-          result: res.data,
-        })
-       if (res.statusCode != 200) {
-         setTimeout(function () {
-           wx.showToast({
-             title: '服务器异常',
-             icon: 'none',
-             duration: 2000
-           })
-         }, 1500)
-       }
-       else if (res.data.state == '1') {
-         wx.hideLoading()
-         wx.navigateTo({
-           url: 'wxnum_exist',
-         })
-       }
+    //console.log(prePage.data.result.openid)
+  //   var that=this
+  //  wx.request({
+  //    url: 'http://guopengli.cn/read_openid_state.php',//向这个文件请求判断openid是否存在
+  //    data:{
+  //      openid: prePage.data.result.openid
+  //    },
+  //    success: function (res) {
+  //      console.log(res.statusCode)
+  //      console.log('cc')
+  //      console.log(res.data)
+  //      that.setData({
+  //         result: res.data,
+  //       })
+  //      if (res.statusCode != 200) {
+  //        setTimeout(function () {
+  //          wx.showToast({
+  //            title: '服务器异常',
+  //            icon: 'none',
+  //            duration: 2000
+  //          })
+  //        }, 1500)
+  //      }
+  //      else if (res.data.state == '1') {
+  //        wx.hideLoading()
+  //        wx.navigateTo({
+  //          url: 'wxnum_exist',
+  //        })
+  //      }
 
-     },
-   })
+  //    },
+  //  })
   },
   infoSubmit: function (e) {//表单提交的监听函数
     var s = e.detail.value
     console.log(s.num)
+    wx.setStorageSync('num', s.num)
+    console.log('num同步保存成功')
     if (this.check(s)) {
       wx.showLoading({
         title: '查询中',
@@ -108,7 +110,7 @@ Page({
         }
   
 
-        else if (res.data.binding=='0'){
+        else if (res.data.binding=='未绑定'){
           wx.hideLoading()
           wx.navigateTo({
             url: 'sign_result',

@@ -1,2 +1,25 @@
 <!--pages/fun/leave.wxml-->
-<text>pages/fun/leave.wxml</text>
+<view class="container">
+    <icon type='warn' size='50'></icon>
+    <view class="title flex-view-item">
+      请假信息录入
+    </view>
+    <form class="flex-view-item" bindsubmit="infoSubmit">
+        <view class="item">
+            <label class="flex-view-item">联系方式</label>
+            <input name="phone_num" placeholder="请输入您手机号码" class="input flex-view-item" type="text">
+            </input>
+        </view>
+
+        <view class="item">
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+    <label class="flex-view-item" style='width=20rpx;'>请假理由</label>
+     {{array[index]}}
+    </view>
+  </picker>
+</view>
+        <button id="submit" form-type="submit">提交申请</button>
+    </form>
+</view>

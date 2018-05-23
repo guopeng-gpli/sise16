@@ -13,25 +13,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var page = getCurrentPages();
-    var prePage = page[page.length - 2]
-    console.log('sign_sure')
-    console.log(prePage.data.openid)
-    //对insert页面的result进行一次拷贝 
-    this.setData({
-      name: prePage.data.name,
-      num: prePage.data.num,
-      openid: prePage.data.openid
-      //  session_key: prePage.data.result.session_key,
-    })
-    console.log(prePage.data.name)
+    // var page = getCurrentPages();
+    // var prePage = page[page.length - 2]
+    // console.log('sign_sure')
+    // console.log(prePage.data.openid)
+    // //对insert页面的result进行一次拷贝 
+    // this.setData({
+    //   name: prePage.data.name,
+    //   num: prePage.data.num,
+    //   openid: prePage.data.openid
+    //   //  session_key: prePage.data.result.session_key,
+    // })
+    // console.log(prePage.data.name)
     console.log("connect")
     var that = this
+    var openid = wx.getStorageSync('openid')
+    console.log('123456' + openid)
+    var num = wx.getStorageSync('num')
+    console.log('1234567 ' + num)
     wx.request({
       url: 'http://guopengli.cn/sql/insert_openid.php',
       data: {
-        num: prePage.data.num,
-        openid: prePage.data.openid
+        num: num,
+        openid: openid
       },
 
       success: function (res) {

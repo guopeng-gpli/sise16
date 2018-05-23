@@ -1,0 +1,9 @@
+<!--test.wxml-->
+<!-- <text>test.wxml</text> -->
+<view class="container">
+    <icon type='warn' size='50'></icon>
+    <view class="title flex-view-item">
+      报 寝 失 败 
+    </view>
+</view>
+<button class="back" bindtap="back">返 回</button>

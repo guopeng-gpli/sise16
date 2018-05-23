@@ -1,35 +1,10 @@
-// const app = getApp()
-// Page({
-//   data: {
-//     result: NaN,
-//   },
 
-  
-
-
-
-//  query: function () {
-//      wx.navigateTo({
-//        url: 'query_result',
-//      })
-//    }
-
-
-
-// })
-// pages/test3/insert_result.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var page = getCurrentPages();
     var prePage = page[page.length - 2]
@@ -58,8 +33,6 @@ Page({
       url: 'http://guopengli.cn/read_name_location.php',
       data: {
         openid: prePage.data.result.openid,
-        //  latitude: latitude,
-        // longitude:longitude,
       },
       success: function (res) {
         console.log(res.statusCode)

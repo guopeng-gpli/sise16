@@ -38,7 +38,7 @@ Page({
     console.log("connect")
     var that = this
     wx.request({
-      url: 'https://www.guopengli.cn/sql/cet.php',
+      url: 'http://guopengli.cn/sql/cet.php',
       data: {
         name: x.name,
         xh: x.xh

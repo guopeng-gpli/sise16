@@ -1,0 +1,13 @@
+<!--test.wxml-->
+<!-- <text>test.wxml</text> -->
+<view class="container">
+    <icon type='success_no_circle' size='50'></icon>
+    <view class="title flex-view-item">
+      提 交 成 功
+    </view>
+    <view class="title flex-view-item">
+      请 等 待 辅 导 员 审 核
+    </view>
+    
+</view>
+<button class="back" bindtap="back">返 回</button>

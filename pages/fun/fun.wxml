@@ -21,4 +21,12 @@
     </view>
   </block>
 </view>
-<view class='hr'></view>
+<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <block wx:for="{{msgList}}">
+       <navigator url="{{item.url}}" open-type="navigate">
+         <swiper-item>
+           <view class="swiper_item">{{item.title}}</view>
+         </swiper-item>
+       </navigator>
+    </block>
+</swiper>

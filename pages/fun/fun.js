@@ -18,6 +18,16 @@ Page({
   },
 
   onLoad: function (options) {
+    var that = this
+    that.setData({
+      msgList: [
+        { url: "url", title: "公告：多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
+        { url: "url", title: "公告：悦如公寓三周年生日趴邀你免费吃喝欢唱" },
+        { url: "http://www.baidu.com", title: "公告：你想和一群有志青年一起过生日嘛？" }]
+        
+        })
+   
+
 
     var that = this
     wx.login({
@@ -35,6 +45,12 @@ Page({
               that.setData({
                 result: res.data
               })
+             
+              
+              wx.setStorageSync('openid', res.data.openid)
+               console.log('同步保存成功')
+              var openid= wx.getStorageSync('openid')
+              console.log('123456'+openid)
               if (res.statusCode != 200) {
                 setTimeout(function () {
                   wx.showToast({
@@ -65,9 +81,41 @@ Page({
 
     switch (id) {
       case "0":
-        wx.navigateTo({
-          url: 'leave'
-        })
+        var openid = wx.getStorageSync('openid')
+        console.log('123456  ' + openid)
+        var that=this
+      wx.request({
+        url: 'http://guopengli.cn/judge_role.php',
+        data:
+        {openid:openid,
+        },
+        success:function(res){
+            console.log(res.statusCode)
+            console.log(res.data)
+            that.setData({
+              result: res.data
+            })
+            if (res.statusCode != 200) {
+              setTimeout(function () {
+                wx.showToast({
+                  title: '服务器异常',
+                  icon: 'none',
+                  duration: 2000
+                })
+              }, 1500)
+            }
+            else if(res.data.role=='辅导员'){
+              wx.navigateTo({
+                url: 'shenhe',
+              })
+            }
+            else
+              wx.navigateTo({
+                url: 'leave'
+              })
+        }
+      })
+        
         break
       case "1":
      
@@ -85,7 +133,6 @@ Page({
           url: 'foward',
         })
         break
-
     }
 
   },
@@ -94,7 +141,7 @@ Page({
     var navs = [];
     var nav0 = new Object();
     nav0.img = "../../images/leave.png";
-    nav0.name = '请假录入';
+    nav0.name = '请假事项';
     navs[0] = nav0;
 
     var nav1 = new Object();

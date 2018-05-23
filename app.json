@@ -7,6 +7,8 @@
     "pages/fun/cet",
     "pages/fun/cet_result",
     "pages/fun/leave",
+    "pages/fun/leave_result",
+    "pages/fun/shenhe",
    "pages/fun/audit",
 
   "pages/fun/quanxiancuowu",
@@ -18,6 +20,7 @@
    "pages/my/sign_nosure",
    "pages/my/wxnum_exist",
    "pages/index/report_result",
+   "pages/index/report_result0",
    "pages/fun/query_result",
     "pages/my/advise"   
   ],

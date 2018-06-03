@@ -86,7 +86,7 @@ Page({
     console.log("connect")
     var that = this
     wx.request({
-      url: 'http://guopengli.cn/read_name.php',
+      url: 'https://www.guopengli.cn/read_name.php',
       data: {
         num:x.num,
       },

@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
   var that=this
   wx.request({
-    url: 'http://guopengli.cn/check_in.php',
+    url: 'https://www.guopengli.cn/check_in.php',
     data:{},
     success:function(res)
     {
@@ -41,7 +41,7 @@ Page({
   
   tongguo:function(){
     wx.request({
-      url: 'http://guopengli.cn/check_check.php',
+      url: 'https://www.guopengli.cn/check_check.php',
     })
 
     wx.navigateTo({

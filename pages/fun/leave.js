@@ -56,7 +56,7 @@ Page({
     console.log("connect")
     var that = this
     wx.request({
-      url: 'http://guopengli.cn/ask_for_leave.php',
+      url: 'https://www.guopengli.cn/ask_for_leave.php',
       data: {
         openid:openid,
         id:leave_id ,

@@ -46,7 +46,7 @@ Page({
 var openid = wx.getStorageSync('openid')
     console.log('123456  ' + openid)
   wx.request({
-    url: 'http://guopengli.cn/read_name_location.php',
+    url: 'https://www.guopengli.cn/read_name_location.php',
     data:{
       openid: openid,
     //  latitude: latitude,
@@ -84,7 +84,7 @@ var openid = wx.getStorageSync('openid')
     console.log('123456' + openid)
     var that = this
     wx.request({
-      url: 'http://guopengli.cn/report_home.php',
+      url: 'https://www.guopengli.cn/report_home.php',
       data: {
         latitude: latitude,
         longitude:longitude,

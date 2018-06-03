@@ -30,7 +30,7 @@ Page({
       },
     })
     wx.request({
-      url: 'http://guopengli.cn/read_name_location.php',
+      url: 'https://www.guopengli.cn/read_name_location.php',
       data: {
         openid: prePage.data.result.openid,
       },
@@ -56,17 +56,7 @@ Page({
             })
           }, 1500)
         }
-      //   else if (res.data.role=='辅导员')
-      //   {
-      //     wx.navigateTo({
-      //       url: 'fdy',
-      //     })
-      //   }
-      // else{
-      //   wx.navigateTo({
-      //     url: 'quanxiancuowu',
-      //   })
-      // }
+   
 
       },
     })

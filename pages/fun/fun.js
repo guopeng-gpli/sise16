@@ -34,7 +34,7 @@ Page({
       success: function (res) {
         if (res.code) {
           wx.request({
-            url: 'http://guopengli.cn/sql/OPENID.php',
+            url: 'https://www.guopengli.cn/sql/OPENID.php',
             data: {
               logcode: res.code
             },
@@ -85,7 +85,7 @@ Page({
         console.log('123456  ' + openid)
         var that=this
       wx.request({
-        url: 'http://guopengli.cn/judge_role.php',
+        url: 'https://www.guopengli.cn/judge_role.php',
         data:
         {openid:openid,
         },
@@ -138,7 +138,7 @@ Page({
         console.log('123456  ' + openid)
         var that = this
         wx.request({
-          url: 'http://guopengli.cn/judge_role.php',
+          url: 'https://www.guopengli.cn/judge_role.php',
           data:
           {
             openid: openid,

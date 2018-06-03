@@ -32,7 +32,7 @@ Page({
     var num = wx.getStorageSync('num')
     console.log('1234567 ' + num)
     wx.request({
-      url: 'http://guopengli.cn/sql/insert_openid.php',
+      url: 'https://www.guopengli.cn/sql/insert_openid.php',
       data: {
         num: num,
         openid: openid

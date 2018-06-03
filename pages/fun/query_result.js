@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'http://guopengli.cn/count.php',
+      url: 'https://www.guopengli.cn/count.php',
       data: {
 
       },

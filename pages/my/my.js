@@ -21,7 +21,7 @@ Page({
     console.log('openid ' + openid) 
       var that = this
       wx.request({
-        url: 'http://guopengli.cn/read_name1.php',
+        url: 'https://www.guopengli.cn/read_name1.php',
         data: {
           openid: openid,
         },

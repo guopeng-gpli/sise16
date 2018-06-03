@@ -20,7 +20,7 @@ Page({
     var page = getCurrentPages();
     var prePage = page[page.length - 2]
     console.log(prePage.data)
-    //对cet页面的result进行一次拷贝  
+    //对页面的result进行一次拷贝  
     this.setData({
       array: prePage.data.result.array,
       times: prePage.data.result.times
